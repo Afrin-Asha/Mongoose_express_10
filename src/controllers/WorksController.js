@@ -61,7 +61,7 @@ exports.UpdatetWork= async (req,res)=>{
     
 
     try {
-        let result=await WorksModel.find({email:email},(err,data)=>{
+        let result=await WorksModel.updateOne({_id:_id},{$set:postBody} ,(err,data)=>{
             if(err){
                 res.status(200).json({status:"fail",data:err})
             }
